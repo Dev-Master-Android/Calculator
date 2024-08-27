@@ -1,11 +1,16 @@
 
 package com.example.calculator
 
+import android.graphics.Color
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 
 class MainActivity : AppCompatActivity() {
     private lateinit var editTextTime1: EditText
@@ -17,6 +22,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
 
         editTextTime1 = findViewById(R.id.editText1)
         editTextTime2 = findViewById(R.id.editText2)
@@ -30,6 +38,8 @@ class MainActivity : AppCompatActivity() {
             val totalSeconds = time1InSeconds + time2InSeconds
             val result = convertToTimeFormat(totalSeconds)
             textViewResult.text = result
+            showToast("Результат: $result")
+            updateTextStyle(result)
         }
 
         buttonSubtract.setOnClickListener {
@@ -39,9 +49,67 @@ class MainActivity : AppCompatActivity() {
             textViewResult.text = if (differenceSeconds < 0) {
                 "Результат не может быть отрицательным."
             } else {
-                convertToTimeFormat(differenceSeconds)
+                val result = convertToTimeFormat(differenceSeconds)
+                showToast("Результат: $result")
+                updateTextStyle(result)
+                result
             }
         }
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_clear -> {
+                clearFields()
+                true
+            }
+            R.id.menu_exit -> {
+                showExitMessage()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun showExitMessage() {
+        Toast.makeText(this, "Приложение закрыто", Toast.LENGTH_SHORT).show()
+        finish() // Завершение работы приложения
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        showExitMessage()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Toast.makeText(this, "Приложение закрыто", Toast.LENGTH_SHORT).show()
+    }
+    private fun clearFields() {
+        editTextTime1.text.clear()
+        editTextTime2.text.clear()
+        textViewResult.setTextColor(Color.parseColor("#000000"))
+        textViewResult.text = "Result"
+        Toast.makeText(this, "Данные очищены", Toast.LENGTH_SHORT).show()
+    }
+
+
+    private fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    private fun updateTextStyle(result: String) {
+        val color = if (result.isEmpty() || result == "Result") {
+            "#000000"
+        } else {
+            "#8B0000"
+        }
+        textViewResult.setTextColor(Color.parseColor(color))
     }
 
     private fun convertToSeconds(timeString: String): Int {

@@ -7,7 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#006400"
+        app:logo="@drawable/ic_calc"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
@@ -21,24 +31,34 @@
             <EditText
                 android:id="@+id/editText1"
                 android:layout_width="45dp"
-                android:hint="print time first"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingStart="10dp"
+                android:background="@drawable/backcorner"
+                android:hint="@string/print_time_first"
                 android:layout_height="50dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                tools:ignore="RtlSymmetry" />
 
             <EditText
                 android:id="@+id/editText2"
                 android:layout_width="45dp"
-                android:hint="print time second"
+                android:textSize="18sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingStart="10dp"
+                android:background="@drawable/backcorner"
+                android:hint="@string/print_time_second"
                 android:layout_height="50dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                tools:ignore="RtlSymmetry"/>
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
             android:orientation="horizontal">
 
             <Button
@@ -46,18 +66,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="+"/>
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:text="@string/plus"
+                android:textSize="28sp"
+                android:backgroundTint="#008000"
+                android:textColor="@color/white"/>
 
-            <Space
-                android:layout_width="30dp"
-                android:padding="30dp"
-                android:layout_height="match_parent"/>
+
+
             <Button
                 android:id="@+id/buttonMinus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="-"/>
+                android:backgroundTint="#008000"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                android:textSize="28sp"
+                android:layout_marginRight="50dp"
+                android:text="@string/minus"
+                android:textColor="@color/white"/>
 
         </LinearLayout>
 
@@ -65,10 +95,11 @@
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
             android:gravity="center"
-            android:text="Result"
-            android:layout_height="wrap_content"/>
+            android:textSize="30sp"
+            android:text="@string/result"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"/>
 
     </LinearLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

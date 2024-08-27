@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="clear">Clear</string>
+    <string name="print_time_first">1m 45s</string>
+    <string name="print_time_second">3m 2s</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="result">Result</string>
+    <string name="exit">Выход</string>
+    <string name="clean">Очистить</string>
 </resources>
