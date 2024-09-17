@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/linearLayoutInputOutput"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <EditText
+        android:id="@+id/expression"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="end"
+        android:inputType="none"
+        android:longClickable="false"
+        android:padding="@dimen/_10dp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/_0"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_60sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:enabled="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="end"
+        android:inputType="none"
+        android:longClickable="false"
+        android:padding="@dimen/_10dp"
+        android:scrollHorizontally="true"
+        android:singleLine="true"
+        android:text="@string/_eq0"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/_30sp" />
+
+    <GridLayout
+        android:id="@+id/gridLayoutKeyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_16dp"
+        android:columnCount="4"
+        android:paddingLeft="@dimen/_10dp"
+        android:paddingRight="@dimen/_10dp">
+        <!-- Нулевая строка -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/clean"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/ac"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backSpace"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/c"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/percent"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background_three"
+            android:text="@string/ost"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/devide"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background_three"
+            android:text="@string/div"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <!-- Первая строка -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/seven"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/_7"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/eight"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/_8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/nine"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/_9"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/multiply"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background_three"
+            android:text="@string/multi"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <!-- Вторая строка -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/four"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/_4"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/five"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/_5"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/six"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/_6"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/subtraction"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background_three"
+            android:text="@string/subtr"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <!-- Третья строка -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/one"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/_1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/two"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/_2"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/three"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/_3"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sum"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background_three"
+            android:text="@string/sum"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <!-- Четвертая строка -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/zero"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/zero"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/doubleZero"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/wzero"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dot"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background"
+            android:text="@string/dot"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/equal"
+            android:layout_width="@dimen/_80dp"
+            android:layout_height="@dimen/_80dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="0"
+            android:layout_margin="@dimen/_6dp"
+            android:background="@drawable/button_background_two"
+            android:text="@string/equal"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_32sp" />
+    </GridLayout>
+</LinearLayout>
